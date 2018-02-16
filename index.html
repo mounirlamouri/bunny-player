@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bunny Player test page</title>
+<meta charset=utf-8>
+<style>
+video {
+  width: 50%;
+  margin-left: 25%;
+}
+</style>
+</head>
+<body>
+  <video controls></video>
+<script>
+  let video = document.querySelector('video');
+  // TODO: use absolute URL.
+  let config = {
+    url: 'resources/tears_of_steel',
+    buffer: 20,
+    segment_count: 119,
+    segment_duration: 5000,
+    qualities: ['480p', '720p', '1080p', '1920p'],
+    video_codec: 'video/mp4; codecs="avc1.640028"',
+    audio_codec: 'audio/mp4; codecs="mp4a.40.2"'
+  };
+  video.setAttribute('data-bunny-player-config', JSON.stringify(config));
+</script>
+</body>
+<script src='scripts/bunny-player.js' async></script>
+</html>
