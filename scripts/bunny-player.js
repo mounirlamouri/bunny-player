@@ -81,7 +81,7 @@ class BunnyPlayer {
         this.audio_segment++;
 
       // Quality update.
-      if (args.type == 'video' && this.video_segment > 4) {
+      if (args.type == 'video') {
         let fetch_time = new Date() - before_fetch;
         if (fetch_time < (this.config.segment_duration * 0.5)) {
           let quality_index = this.config.qualities.indexOf(this.current_quality);
